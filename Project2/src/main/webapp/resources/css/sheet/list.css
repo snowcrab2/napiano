@@ -1,0 +1,157 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+	font-family: 'IBMPlexSansKR-Regular';
+}
+*{
+	padding:0px;
+	margin:0px;
+}
+a{
+	text-decoration:none;
+	color:black;
+}
+.container{
+	width:1200px;
+	margin:0px auto;
+}
+
+/* 내비 */
+nav{
+	position:relative;
+	height:30px;
+	border-bottom:#5495b2 2px solid;
+	text-align:center;
+	
+}
+nav li{
+	list-style:none;
+	display:inline;
+	padding-left:30px;
+	padding-right:30px;
+	font-size:17px;
+}
+#thisPage{
+	color:#5495b2;
+	font-weight:bold;
+}
+
+/* 검색 */
+#searchForm select{
+	border:none;
+	width:87px;
+	height:23px;
+}
+#searchForm select:focus{
+	outline:none;
+}
+#search{
+	border:none;
+	width:150px;
+	height:23px;
+}
+#search:focus{
+	outline:none;
+	border-bottom:1px solid #C3C3C3;
+}
+#searchTd img{
+	height:15px;
+	cursor:pointer;
+}
+
+
+/* 카테고리 */
+.asideCategory{
+	position:relative;
+	box-sizing:border-box;
+	padding:15px 0px 0px 10px;
+	width:200px;
+	float:left;
+}
+.asideCategory li{
+	list-style:none;
+	padding:5px 3px;
+}
+
+/* 섹션 */
+.boardSection{
+	position:relative;
+	box-sizing:border-box;
+	width:1000px;
+	float:right;
+}
+
+/* 글목록 */
+.boardSection table{
+	border-collapse:collapse;
+	box-sizing:border-box;
+	width:800px;
+	margin:20px auto;
+}
+.boardSection th{
+	text-align:left;
+	box-sizing:border-box;
+	padding: 10px;
+}
+.pagingMove:hover{
+	color:#5495b2;
+}
+#boardTitle{
+	width:420px;
+}
+#boardWriter{
+	width:128px;
+}
+#boarddifficulty{
+	width:95px;
+}
+#boardPrice{
+	width:90px;
+}
+.boardSection td{
+	border-top:1px solid #C3C3C3;
+	padding: 10px;
+}
+.commentView{
+	padding-left:5px;
+	color:#5495b2;
+}
+
+/* 글쓰기 버튼 */
+#regTd{
+	text-align:right;
+}
+#regBtn{
+	box-sizing:border-box;
+	background-color:#5495b2;
+	color:white;
+	font-size:14px;
+	width:70px;
+	height:40px;
+	padding:8px 10px;
+	border:none;
+	border-radius:3px;
+	cursor:pointer;
+}
+
+/* 페이징 */
+#boardPage{
+	position:relative;
+	text-align:center;
+	padding:10px 0px 30px 0px;
+}
+#boardPage li{
+	display:inline;
+	list-style:none;
+	padding:5px 15px;
+}
+.paginateBtn img{
+	height:12px;
+}
+
+

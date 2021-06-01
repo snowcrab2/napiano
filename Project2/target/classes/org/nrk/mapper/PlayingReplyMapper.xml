@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.nrk.mapper.PlayingReplyMapper">
+
+	<!-- 댓글 등록 -->
+	<insert id="insert">
+		insert into playing_reply(bno, id, reply, replyer)
+		values(#{bno}, #{id}, #{reply}, #{replyer})
+	</insert>
+	
+	<!-- 댓글 조회 -->
+	<select id="read" resultType="org.nrk.domain.ReplyVO">
+		select * from playing_reply where rno = #{rno}
+	</select>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="delete">
+		delete from playing_reply where rno = #{rno}
+	</delete>
+	
+	<!-- 댓글 수정 -->
+	<update id="update">
+		update playing_reply set reply = #{reply}, updatedate = now()
+		where rno = #{rno}
+	</update>
+	
+	<!-- 댓글 목록 -->
+	<select id="getListWithPaging" resultType="org.nrk.domain.ReplyVO">
+		<![CDATA[
+			select * from (
+				select @rownum:=@rownum+1 as rn, re.*
+				from(select @rownum:=0) as tmp, playing_reply re
+				where bno = #{bno}
+				order by bno desc
+				)replyList
+				where rn > (#{cri.pageNum} -1) * #{cri.amount}
+				and rn <= #{cri.pageNum} * #{cri.amount}
+		]]>
+	</select>
+	
+	<!-- 댓글 수 -->
+	<select id="getCountByBno" resultType="int">
+		<![CDATA[
+			select count(rno) from playing_reply where bno = #{bno}
+		]]>
+	</select>
+	
+
+</mapper>

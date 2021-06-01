@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.nrk.mapper.SheetBoardMapper">
+
+	<sql id="criteria">
+		<trim prefix="AND(" suffix=")" prefixOverrides="OR">
+			<foreach item="type" collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							title like concat('%',#{keyword},'%')
+						</when>
+						<when test="type == 'C'.toString()">
+							content like concat('%',#{keyword},'%')
+						</when>
+						<when test="type == 'W'.toString()">
+							writer like concat('%',#{keyword},'%')
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+	
+	<!-- 전체 게시글 리스트 -->
+	<select id="getListWithPaging" resultType="org.nrk.domain.SheetBoardVO">
+		<![CDATA[
+			select * from(
+			select @rownum:=@rownum+1 as rn, bno, id,
+			case when category ='classic' then '클래식'
+				when category ='newage' then '뉴에이지'
+				when category ='OST' then 'OST'
+				when category ='POP' then 'POP'
+			end category
+			, title, content, writer, regdate, updatedate, 
+			case when difficulty ='veryeasy' then '매우쉬움'
+				when difficulty ='easy' then '쉬움'
+				when difficulty ='normal' then '보통'
+				when difficulty ='difficulty' then '어려움'
+				when difficulty ='verydifficulty' then '매우어려움'
+			end difficulty
+			, hit, price, replycnt
+			from(select @rownum:=0) as tmp, sheet_board
+		]]>
+		<if test="category != null">
+			where category = #{category}
+		</if>
+		<if test="category == null">
+			where 1=1
+		</if>
+		
+		<include refid="criteria"></include>
+		
+		<![CDATA[
+			order by bno desc
+			)sboardList
+			where rn > (#{pageNum} -1) * #{amount} and rn <= #{pageNum} * #{amount}
+		]]>
+	</select>
+	
+	<!-- 게시글 작성 -->
+	<insert id="insert">
+		insert into sheet_board (id, category, title, content, writer, difficulty, price)
+		values (#{id}, #{category}, #{title}, #{content}, #{writer}, #{difficulty}, #{price})
+	</insert>
+	
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="bno" order="BEFORE" resultType="int">
+			select max(bno)+1 from sheet_board
+		</selectKey>
+		
+		insert into sheet_board (bno, id, category, title, content, writer, difficulty, price)
+		values (#{bno}, #{id}, #{category}, #{title}, #{content}, #{writer}, #{difficulty}, #{price})
+		
+	</insert>
+	
+	<!-- 게시글 조회 -->
+	<select id="read" resultType="org.nrk.domain.SheetBoardVO">
+		select * from sheet_board where bno = #{bno}
+	</select>
+	
+	<!-- 게시글 삭제 -->
+	<delete id="delete">
+		delete from sheet_board where bno = #{bno}
+	</delete>
+	
+	<!-- 게시글 수정 -->
+	<update id="update">
+		update sheet_board
+		set category = #{category},
+		title = #{title},
+		content = #{content},
+		difficulty = #{difficulty},
+		price = #{price},
+		updateDate = now()
+		where bno = #{bno}
+	</update>
+	
+	
+	
+	<!-- 게시글 조회수 -->
+	<update id="sboardHit">
+		update sheet_board
+		set hit = hit+1
+		where bno = #{bno}
+	</update>
+	
+	
+	<!-- 총 게시글 수 -->
+	<select id="getTotalCount" resultType="int">
+		select count(*) from sheet_board where bno > 0
+		<if test="category != null">
+			and category = #{category}
+		</if>
+		
+		<include refid="criteria"></include>
+	</select>
+	
+	<!-- 댓글 수 -->
+	<update id="updateReplyCnt">
+		update sheet_board set replycnt = replycnt + #{amount}
+		where bno = #{bno}
+	</update>
+
+</mapper>

@@ -1,0 +1,161 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+	font-family: 'IBMPlexSansKR-Regular';
+}
+*{
+	padding:0px;
+	margin:0px;
+}
+a{
+	text-decoration:none;
+	color:black;
+}
+.container{
+	width:1200px;
+	margin:0px auto;
+}
+
+/* 내비 */
+nav{
+	position:relative;
+	height:30px;
+	border-bottom:#5495b2 2px solid;
+	text-align:center;
+	
+}
+nav li{
+	list-style:none;
+	display:inline;
+	padding-left:30px;
+	padding-right:30px;
+	font-size:17px;
+}
+#thisPage{
+	color:#5495b2;
+	font-weight:bold;
+}
+
+
+/* 카테고리 */
+.asideCategory{
+	position:relative;
+	box-sizing:border-box;
+	padding:15px 0px 0px 10px;
+	width:200px;
+	float:left;
+}
+.asideCategory li{
+	list-style:none;
+	padding:5px 3px;
+}
+
+/* 섹션 */
+.boardSection{
+	position:relative;
+	box-sizing:border-box;
+	width:1000px;
+	float:right;
+}
+
+/* 글목록 */
+.boardList{
+	border-collapse:collapse;
+	box-sizing:border-box;
+	display:inline-block;
+	width:300px;
+	height:240px;
+	font-size:14px;
+	margin:40px 15px 20px 15px;
+}
+.firstTd{
+	height:140px;
+}
+.profileImg{
+	width:55px;
+}
+.profileImg img{
+	height:50px;
+}
+iframe{
+	width:300px;
+	height:140px;
+}
+.pagingMove{
+	font-size:16px;
+	font-weight:bold;
+}
+.pagingMove:hover{
+	color:#5495b2;
+}
+.boardInfo{
+	color:#B8B8B8;
+}
+
+/* 검색 */
+.searchTable{
+	border-collapse:collapse;
+	box-sizing:border-box;
+	width:960px;
+	margin:20px;
+}
+.searchTable select{
+	border:none;
+	width:87px;
+	height:23px;
+}
+.searchTable select:focus{
+	outline:none;
+}
+#search{
+	border:none;
+	width:150px;
+	height:23px;
+}
+#search:focus{
+	outline:none;
+	border-bottom:1px solid #C3C3C3;
+}
+.searchTable img{
+	height:15px;
+	cursor:pointer;
+}
+
+/* 글쓰기 버튼 */
+#regBtn{
+	box-sizing:border-box;
+	background-color:#5495b2;
+	color:white;
+	font-size:14px;
+	width:70px;
+	height:40px;
+	padding:8px 10px;
+	border:none;
+	border-radius:3px;
+	cursor:pointer;
+}
+.regBtnTd{
+	text-align:right;
+}
+
+/* 페이징 */
+#boardPage{
+	position:relative;
+	text-align:center;
+	padding:10px 0px 30px 0px;
+}
+#boardPage li{
+	display:inline;
+	list-style:none;
+	padding:5px 15px;
+}
+.paginateBtn img{
+	height:12px;
+}
+
+

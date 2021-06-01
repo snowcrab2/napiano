@@ -1,0 +1,107 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+	font-family: 'IBMPlexSansKR-Regular';
+}
+*{
+	padding:0px;
+	margin:0px;
+}
+a{
+	font-size:13px;
+	text-decoration:none;
+	color:#C3C3C3;
+}
+a:hover{
+	text-decoration:underline;
+}
+/* 레이아웃 */
+.container{
+	width:50%;
+	float:left;
+}
+.backgrourndAside{
+	width:50%;
+	height:1000px;
+	float:right;
+	background-image:url('../../images/photo6.jpg');
+	background-size:900px;
+}
+
+table img{
+	height:230px;
+}
+table{
+	box-sizing:border-box;
+	border-collapse:collapse;
+	margin:0px auto;
+	margin-top:150px;
+	width:300px;
+}
+.loginTd{
+	font-size:25px;
+	font-weight:bold;
+	padding-bottom:10px;
+}
+.titleTd{
+	padding:20px 0px 10px 0px;
+}
+.membershipTd{
+	text-align:right;
+	padding-top:5px;
+}
+.submitTd{
+	padding:20px 0px;
+}
+
+/* 로그인 실패 
+.loginfail{
+	border:2px solid #CC3D3D;
+	font-size:13px;
+	padding:35px;
+}
+*/
+
+/* input */
+#id{
+	box-sizing:border-box;
+	border:1px solid #C3C3C3;
+	width:300px;
+	height:40px;
+	font-size:16px;
+	padding-left:10px;
+	border-radius:3px;
+}
+#id:focus{
+	outline:none;
+}
+#pw{
+	box-sizing:border-box;
+	border:1px solid #C3C3C3;
+	width:300px;
+	height:40px;
+	font-size:16px;
+	padding-left:10px;
+	border-radius:3px;
+}
+#pw:focus{
+	outline:none;
+}
+
+/* 로그인 버튼 */
+#submit{
+	box-sizing:border-box;
+	width:300px;
+	height:40px;
+	border:none;
+	border-radius:2px;
+	color:white;
+	background:#5495b2;
+	font-size:15px;
+	font-family: 'IBMPlexSansKR-Regular';
+}

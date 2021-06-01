@@ -1,0 +1,39 @@
+@charset "UTF-8";
+header{
+	position:relative;
+}
+#headerTop{
+	position:relative;
+	width:100%;
+	height:25px;
+	background:#5495b2;
+}
+#headerTop a{
+	color:#F9FFFF;
+}
+#logoutBtn{
+	border:none;
+	background:#5495b2;
+	font-size:13px;
+	color:#F9FFFF;
+	font-family: 'IBMPlexSansKR-Regular';
+	cursor:pointer;
+}
+#memberInfo{
+	position:absolute;
+	right:10px;
+	top:2px;
+	box-sizing:border-box;
+	font-size:13px;
+}
+.verticalBar{
+	padding:0px 5px;
+	color:white;
+}
+
+#headerLogo{
+	text-align:center;
+}
+#headerLogo img{
+	width:230px;
+}

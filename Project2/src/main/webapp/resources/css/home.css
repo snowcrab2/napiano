@@ -1,0 +1,160 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+	font-family: 'IBMPlexSansKR-Regular';
+}
+*{
+	padding:0px;
+	margin:0px;
+}
+a{
+	text-decoration:none;
+	color:black;
+}
+.container{
+	width:1200px;
+	margin:0px auto;
+}
+/* fixed */
+.fixed{
+	position:fixed;
+	width:1000px;
+	height:100px;
+	background:#2B2B2B;
+	bottom:0px;
+	left:100px;
+}
+.fixedTitle{
+	position:absolute;
+	left:170px;
+	top:38px;
+	font-size:17px;
+	color:white;
+}
+.fixedPlaying{
+	position:absolute;
+	right:0px;
+}
+ifram{
+	width:250px;
+	height:100px;
+}
+
+/* 내비 */
+nav{
+	position:relative;
+	height:30px;
+	border-bottom:#5495b2 2px solid;
+	text-align:center;
+	
+}
+nav li{
+	list-style:none;
+	display:inline;
+	padding-left:30px;
+	padding-right:30px;
+	font-size:17px;
+}
+
+/* 섹션 */
+section{
+	position:relative;
+	box-sizing:border-box;
+	width:1200px;
+	float:right;
+}
+
+/* 인기연주영상 */
+.bestPlaying{
+	width:750px;
+	height:360px;
+	margin:40px auto;
+}
+.bestPlaying h3{
+	margin-bottom:15px;
+}
+.firstTable{
+	margin-right:30px;
+}
+.bestPlaying table{
+	border-collapse:collapse;
+	box-sizing:border-box;
+	display:inline-block;
+}
+
+.profileImg{
+	padding-right:5px;
+	border-bottom:#C3C3C3 1px solid;
+	padding-top:7px;
+}
+.profileImg img{
+	height:45px;
+}
+.pagingMove{
+	font-size:16px;
+}
+.pagingMove:hover{
+	color:#5495b2;
+}
+.boardWriter{
+	font-size:14px;
+	color:#B8B8B8;
+	border-bottom:#C3C3C3 1px solid;
+}
+
+/* 실시간 TOP 클래스 */
+.newClass{
+	width:1100px;
+	height:390px;
+	margin:80px auto;
+}
+.newClass h2{
+	text-align:center;
+	margin-bottom:15px;
+}
+.newClass table{
+	border-collapse:collapse;
+	box-sizing:border-box;
+	display:inline-block;
+	width:320px;
+	height:340px;
+	font-size:14px;
+	margin:0px 20px;
+}
+.classFirstTd{
+	width:300px;
+	height:200px;
+}
+.classFirstTd img{
+	width:320px;
+	height:214px;
+}
+.classWriter{
+	font-size:12px;
+	font-weight:bold;
+}
+.classRec{
+	padding-top:5px;
+	padding-bottom:10px;
+	font-size:14px;
+	color:#8C8C8C;
+}
+.classRec img{
+	height:15px;
+}
+.pagingMove2{
+	font-size:18px;
+}
+.pagingMove2:hover{
+	color:#5495b2;
+}
+.priceTd{
+	font-size:17px;
+	border-top:#C3C3C3 1px solid;
+	padding-top:10px;
+}

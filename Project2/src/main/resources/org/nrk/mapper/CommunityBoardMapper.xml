@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.nrk.mapper.CommunityBoardMapper">
+
+	<sql id="criteria">
+		<trim prefix="AND(" suffix=")" prefixOverrides="OR">
+			<foreach item="type" collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							title like concat('%',#{keyword},'%')
+						</when>
+						<when test="type == 'C'.toString()">
+							content like concat('%',#{keyword},'%')
+						</when>
+						<when test="type == 'W'.toString()">
+							writer like concat('%',#{keyword},'%')
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+	
+	<!-- 전체 게시글 리스트 -->
+	<select id="getListWithPaging" resultType="org.nrk.domain.CommunityBoardVO">
+		<![CDATA[
+			select * from(
+			select @rownum:=@rownum+1 as rn, bno, id,
+			case  when category ='qna' then '질문'
+				when category ='piano' then '피아노토크'
+				when category ='talk' then '잡담'
+			end category
+			, title, content, writer, regdate, updatedate, recommend, hit, replycnt
+			from(select @rownum:=0) as tmp, community_board
+		]]>
+		<if test="category != null">
+			where category = #{category}
+		</if>
+		<if test="category == null">
+			where 1=1
+		</if>
+		
+		<include refid="criteria"></include>
+		
+		<![CDATA[
+			order by bno desc
+			)cboardList
+			where rn > (#{pageNum} -1) * #{amount} and rn <= #{pageNum} * #{amount}
+		]]>
+	</select>	
+	
+	
+	<!-- 게시글 작성 -->
+	<insert id="insert">
+		insert into community_board (id, category, title, content, writer)
+		values (#{id}, #{category}, #{title}, #{content}, #{writer})
+	</insert>
+	
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="bno" order="BEFORE" resultType="int">
+			select max(bno)+1 from community_board
+		</selectKey>
+		
+		insert into community_board (id, bno, category, title, content, writer)
+		values (#{id}, #{bno}, #{category}, #{title}, #{content}, #{writer})
+		
+	</insert>
+	
+	<!-- 게시글 조회 -->
+	<select id="read" resultType="org.nrk.domain.CommunityBoardVO">
+		select * from community_board where bno = #{bno}
+	</select>
+	
+	<!-- 게시글 삭제 -->
+	<delete id="delete">
+		delete from community_board where bno = #{bno}
+	</delete>
+	
+	<!-- 게시글 수정 -->
+	<update id="update">
+		update community_board
+		set category = #{category},
+		title = #{title},
+		content = #{content},
+		updateDate = now()
+		where bno = #{bno}
+	</update>
+	
+	
+	
+	<!-- 게시글 조회수 -->
+	<update id="cboardHit">
+		update community_board
+		set hit = hit+1
+		where bno = #{bno}
+	</update>
+	
+	
+	<!-- 총 게시글 수 -->
+	<select id="getTotalCount" resultType="int">
+		select count(*) from community_board where bno > 0
+		<if test="category != null">
+			and category = #{category}
+		</if>
+		
+		<include refid="criteria"></include>
+	</select>
+	
+	
+	<!-- 추천 -->
+	<update id="recommend">
+		update community_board
+		set recommend = recommend+1
+		where bno = #{bno}
+	</update>
+	
+	
+	<!-- 댓글 수 -->
+	<update id="updateReplyCnt">
+		update community_board set replycnt = replycnt + #{amount}
+		where bno = #{bno}
+	</update>
+</mapper>

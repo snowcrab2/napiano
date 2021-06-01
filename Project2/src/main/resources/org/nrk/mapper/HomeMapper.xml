@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.nrk.mapper.HomeMapper">
+	<!-- 리스트 1 -->
+	<select id="getListWithPaging" resultType="org.nrk.domain.PlayingBoardVO">
+		<![CDATA[
+			select * from(
+			select @rownum:=@rownum+1 as rn, bno, id,
+			case when category ='classic' then '클래식'
+				when category ='newage' then '뉴에이지'
+				when category ='OST' then 'OST'
+				when category ='POP' then 'POP'
+			end category
+			, title, content, link, writer, regdate, updatedate, recommend, hit, replycnt
+			from(select @rownum:=0) as tmp, playing_board
+            where 1=1
+            order by recommend desc
+			)pboardList
+            limit 5;
+		]]>
+	</select>	
+	<!-- 리스트 2 -->
+	<select id="getListWithPaging2" resultType="org.nrk.domain.PlayingBoardVO">
+		<![CDATA[
+			select * from(
+			select @rownum:=@rownum+1 as rn, bno, id,
+			case when category ='classic' then '클래식'
+				when category ='newage' then '뉴에이지'
+				when category ='OST' then 'OST'
+				when category ='POP' then 'POP'
+			end category
+			, title, content, link, writer, regdate, updatedate, recommend, hit, replycnt
+			from(select @rownum:=0) as tmp, playing_board
+            where 1=1
+            order by recommend desc
+			)pboardList
+            limit 5, 10;
+		]]>
+	</select>
+	
+	<!-- 클래스 리스트 -->
+	<select id="getListWithPaging3" resultType="org.nrk.domain.ClassBoardVO">
+		<![CDATA[
+			select * from(
+			select @rownum:=@rownum+1 as rn, bno, id, imglink, title, content, writer, recommend, price, regdate, updatedate
+			from(select @rownum:=0) as tmp, class_board
+			where 1=1
+			order by recommend desc
+			)oboardList
+			limit 3;
+		]]>
+	</select>
+</mapper>

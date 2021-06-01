@@ -1,0 +1,39 @@
+@charset "UTF-8";
+footer{
+	position:relative;
+	clear:both;
+	box-sizing:border-box;
+	height:160px;
+	background:#2B2B2B;
+	color:white;
+}
+#footerHead{
+	height:60px;
+	border-bottom:#BDBDBD 1px solid;
+}
+#footerTitle{
+	position:absolute;
+	left:10px;
+	top:15px;
+	font-size:18px;
+}
+#footerAside{
+	position:absolute;
+	right:5px;
+	top:20px;
+	font-size:13px;
+}
+#footerAside a{
+	color:white;
+}
+#footerSection{
+	padding:10px 0px 0px 10px;
+	font-size:13px;
+}
+#footerDetail{
+	padding:10px 0px 15px 0px;
+}
+.detailInfo{
+	color:#A6A6A6;
+	padding:0px 7px 0px 0px;
+}

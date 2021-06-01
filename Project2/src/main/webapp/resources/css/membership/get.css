@@ -1,0 +1,211 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+	font-family: 'IBMPlexSansKR-Regular';
+}
+*{
+	padding:0px;
+	margin:0px;
+}
+a{
+	text-decoration:none;
+	color:black;
+}
+.container{
+	width:1200px;
+	margin:0px auto;
+}
+input{
+	font-family: 'IBMPlexSansKR-Regular';
+}
+section{
+	position:relative;
+	width:1200px;
+	margin-top:70px;
+}
+/* 내비 */
+nav{
+	position:relative;
+	height:30px;
+	border-bottom:#5495b2 2px solid;
+	text-align:center;
+	
+}
+nav li{
+	list-style:none;
+	display:inline;
+	padding-left:30px;
+	padding-right:30px;
+	font-size:17px;
+}
+
+#thisPage{
+	color:#5495b2;
+	font-weight:bold;
+}
+section table{
+	box-sizing:border-box;
+	border-collapse:collapse;
+	margin:0px auto 70px auto;
+	border:1px solid #C3C3C3;
+	width:600px;
+}
+.titleTd{
+	box-sizing:border-box;
+	padding:45px 50px 0px 50px;
+	font-size:15px;
+	font-weight:bold;
+}
+.viewTd{
+	box-sizing:border-box;
+	padding:0px 50px;
+}
+.secondTd{
+	padding:10px 50px;
+}
+.genderTd{
+	padding:20px 50px 10px 50px;
+}
+#phoneChkBtn{
+	box-sizing:border-box;
+	padding:10px 50px;
+	text-align:right;
+}
+.submitTd{
+	padding:35px 0px;
+	text-align:center;
+}
+.phoneChk{
+	box-sizing:border-box;
+	padding:10px 50px;
+}
+
+/* 버튼 */
+#phoneChkBtn input{
+	box-sizing:border-box;
+	width:150px;
+	height:50px;
+	border-radius:30px;
+	border:2px solid #EAEAEA;
+	color:black;
+	background:white;
+	font-size:16px;
+	font-family: 'IBMPlexSansKR-Regular';
+}
+#submit{
+	box-sizing:border-box;
+	width:250px;
+	height:50px;
+	border-radius:2px;
+	border:none;
+	color:black;
+	background:#EAEAEA;
+	font-size:16px;
+}
+#removeBtn{
+	box-sizing:border-box;
+	width:250px;
+	height:50px;
+	border-radius:2px;
+	border:none;
+	color:black;
+	background:#EAEAEA;
+	font-size:16px;
+	margin-left:10px;
+}
+
+/* Input 태그 */
+#id{
+	box-sizing:border-box;
+	border:none;
+	border-bottom:2px solid #EAEAEA;
+	width:500px;
+	height:45px;
+	font-size:16px;
+}
+#id:focus{
+	outline:none;
+	border-bottom:2px solid black;
+}
+#password{
+	box-sizing:border-box;
+	border:none;
+	border-bottom:2px solid #EAEAEA;
+	width:500px;
+	height:45px;
+	font-size:16px;
+}
+#password:focus{
+	outline:none;
+	border-bottom:2px solid black;
+}
+#passwordChk{
+	box-sizing:border-box;
+	border:none;
+	border-bottom:2px solid #EAEAEA;
+	width:500px;
+	height:45px;
+	font-size:16px;
+}
+#passwordChk:focus{
+	outline:none;
+	border-bottom:2px solid black;
+}
+#nickname{
+	box-sizing:border-box;
+	border:none;
+	border-bottom:2px solid #EAEAEA;
+	width:500px;
+	height:45px;
+	font-size:16px;
+}
+#nickname:focus{
+	outline:none;
+	border-bottom:2px solid black;
+}
+.phone{
+	box-sizing:border-box;
+	border:none;
+	border-bottom:2px solid #EAEAEA;
+	width:500px;
+	height:45px;
+	font-size:16px;
+}
+.phone:focus{
+	outline:none;
+	border-bottom:2px solid black;
+}
+.phoneChkInput{
+	box-sizing:border-box;
+	border:none;
+	border-bottom:2px solid #EAEAEA;
+	width:500px;
+	height:45px;
+	font-size:16px;
+}
+.phoneChkInput:focus{
+	outline:none;
+	border-bottom:2px solid black;
+}
+#birth{
+	box-sizing:border-box;
+	border:none;
+	border-bottom:2px solid #EAEAEA;
+	width:500px;
+	height:45px;
+	font-size:16px;
+}
+#birth:focus{
+	outline:none;
+	border-bottom:2px solid black;
+}
+
+/* 성별 Input */
+.genderInput{
+	margin-left:40px;
+}

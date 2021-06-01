@@ -1,0 +1,292 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+	font-family: 'IBMPlexSansKR-Regular';
+}
+*{
+	padding:0px;
+	margin:0px;
+}
+a{
+	text-decoration:none;
+	color:black;
+}
+.container{
+	width:1200px;
+	margin:0px auto;
+}
+
+/* 내비 */
+nav{
+	position:relative;
+	height:30px;
+	border-bottom:#5495b2 2px solid;
+	text-align:center;
+	
+}
+nav li{
+	list-style:none;
+	display:inline;
+	padding-left:30px;
+	padding-right:30px;
+	font-size:17px;
+}
+
+#thisPage{
+	color:#5495b2;
+	font-weight:bold;
+}
+
+/* 섹션 */
+section{
+	position:relative;
+	width:800px;
+	margin:35px auto;
+	border:#C3C3C3 1px solid;
+}
+.sectionHeder{
+	position:relative;
+	box-sizing:border-box;
+	width:800px;
+	height:70px;
+	padding:10px;
+}
+
+/* 프로필사진 */
+.profileImg{
+	position:absolute;
+}
+.profileImg img{
+	height:50px;
+}
+/* 글쓴이 */
+.boardWriter{
+	position:absolute;
+	left:65px;
+}
+/* 글 수정, 삭제 */
+.boardModifyRemove{
+	position:absolute;
+	right:10px;
+	color:#B8B8B8;
+	font-size:13px;
+}
+.boardModifyRemove button{
+	color:#B8B8B8;
+	background:white;
+	border:none;
+	cursor:pointer;
+}
+/* 글작성일, 조회수 */
+.boardTimeHit{
+	position:absolute;
+	left:65px;
+	top:35px;
+	color:#B8B8B8;
+}
+
+/* 글 상세 내용 */
+.boardContent{
+	position:relative;
+	padding:10px;
+}
+.boardContent h3{
+	margin-bottom:20px;
+}
+iframe{
+	width:775px;
+	height:436px;
+}
+/* 좋아요, 추천 */
+.boardInfoShow{
+	position:relative;
+	padding:10px;
+}
+/* 좋아요 이미지 */
+.boardInfoShow img{
+	height:15px;
+}
+/* 좋아요 누르는곳 */
+.boardAction{
+	position:relative;
+	width:300px;
+	height:40px;
+	padding:10px;
+	margin:0px auto;
+}
+/* 좋아요 버튼 */
+#recBtn{
+	box-sizing:border-box;
+	width:300px;
+	height:40px;
+	border-radius:2px;
+	border:none;
+	color:#5495b2;
+	background:#EAEAEA;
+	font-size:16px;
+}
+
+
+/* 댓글 작성 창 */
+.boardComment{
+	position:relative;
+	width:770px;
+	height:80px;
+	margin:0px auto;
+}
+.CommentImg{
+	position:absolute;
+	top:12px;
+	width:45px;
+}
+.CommentImg img{
+	height:45px;
+}
+.CommentInput{
+	position:absolute;
+	left:50px;
+	box-sizing:border-box;
+	border:1px solid #C3C3C3;
+	border-radius:2px;
+	width:680px;
+	height:76px;
+}
+/* 댓글 작성 */
+.CommentText{
+	border:none;
+	padding:10px;
+	width:550px;
+	height:50px;
+}
+.CommentText:focus{
+	outline:none;
+}
+#CommentBtn{
+	box-sizing:border-box;
+	background-color:#5495b2;
+	color:white;
+	font-size:14px;
+	width:70px;
+	height:45px;
+	padding:8px 10px;
+	border:none;
+	border-radius:3px;
+	margin-left:20px;
+}
+.CommentText, #CommentBtn{
+	vertical-align:middle;
+}
+
+/* 댓글 수정 form */
+.modifyComment{
+	width:700px;
+	height:70px;
+}
+.modifyCommentText{
+	box-sizing:border-box;
+	border:1px solid #C3C3C3;
+	border-radius:2px;
+	width:600px;
+	height:65px;
+	padding:10px;
+	margin-top:5px;
+}
+#commentModifyBtn{
+	width:50px;
+	height:50px;
+	box-sizing:border-box;
+	border:none;
+	background:#5495b2;
+	color:white;
+	border-radius:2px;
+	margin-left:10px;
+}
+.modifyCommentText, #commentModifyBtn{
+	vertical-align:middle;
+}
+
+
+/* 댓글 목록 이미지 */
+#replyImg{
+	position:relative;
+	top:0px;
+	left:0px;
+}
+
+/* 글 목록 버튼 */
+.listBtn{
+	position:relative;
+	width:153px;
+	margin:0px auto 30px auto;
+}
+button[data-oper="list"]{
+	box-sizing:border-box;
+	width:153px;
+	height:50px;
+	border-radius:3px;
+	border:1px solid #5495b2;
+	color:white;
+	background:#5495b2;
+	font-size:16px;
+}
+
+/* 댓글 목록 */
+.replyDiv{
+	position:relative;
+	padding:10px;
+}
+.replylist{
+	list-style-type:none;
+	padding:10px 0px;
+}
+/*
+.replylist:before{
+	list-style-image:url("../../images/profile.png");
+	display:inline-block;
+	height:37px;
+}
+*/
+#replyImg{
+	height:37px;
+}
+.replyinfo{
+	display:inline-block;
+	padding-left:5px;
+}
+.replyinfo .divider{
+	color:#B8B8B8;
+	padding:0px 5px;
+}
+.replyinfo .replyTime{
+	color:#B8B8B8;
+}
+
+/* 댓글 수정, 삭제 a태그 */
+.commentModifyA, .commentDeleteA{
+	font-size:smaller;
+	color:#B8B8B8;
+}
+.commentModifyA{
+	padding-left:15px;	
+}
+
+/* 댓글 페이징 */
+.replyPageDiv{
+	position:relative;
+	text-align:center;
+	padding:10px 0px 15px 0px;
+}
+.replyPageDiv li{
+	display:inline;
+	list-style:none;
+	padding:5px 15px;
+}
+.replyPageDiv img{
+	height:12px;
+}
+

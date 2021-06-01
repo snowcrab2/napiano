@@ -1,0 +1,150 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+	font-family: 'IBMPlexSansKR-Regular';
+}
+*{
+	padding:0px;
+	margin:0px;
+}
+a{
+	text-decoration:none;
+	color:black;
+}
+.container{
+	width:1200px;
+	margin:0px auto;
+}
+
+/* 내비 */
+nav{
+	position:relative;
+	height:30px;
+	border-bottom:#5495b2 2px solid;
+	text-align:center;
+	
+}
+nav li{
+	list-style:none;
+	display:inline;
+	padding-left:30px;
+	padding-right:30px;
+	font-size:17px;
+}
+
+#thisPage{
+	color:#5495b2;
+	font-weight:bold;
+}
+
+/* 섹션 */
+section{
+	position:relative;
+	width:1100px;
+	height:470px;
+	margin:70px auto;
+}
+.classImg{
+	position:absolute;
+	width:600px;
+	height:467px;
+}
+.classImg img{
+	width:700px;
+	height:467px;
+}
+
+/* 강의 정보 */
+.classInfo{
+	box-sizing:border-box;
+	position:absolute;
+	width:375px;
+	height:467px;
+	right:0px;
+	border:1px solid #C3C3C3;
+	margin-left:25px;
+	border-radius:3px;
+}
+.classInfo table{
+	border-collapse:collapse;
+	box-sizing:border-box;
+	width:300px;
+	margin:35px auto;
+}
+.classWriter{
+	font-size:14px;
+	
+}
+.classTitle{
+	font-size:24px;
+	font-weight:bold;
+}
+
+.classRec img{
+	height:16px;
+}
+.priceTd{
+	font-size:22px;
+	border-bottom:#C3C3C3 1px solid;
+	padding:15px 0px;
+}
+.classRec{
+	padding-top:15px;
+	font-size:16px;
+	color:#2B2B2B;
+}
+
+/* 버튼 */
+.orderTd{
+	padding-top:10px;
+	text-align:center;
+}
+.optionTd{
+	padding-top:100px;
+}
+.optionBtn{
+	box-sizing:border-box;
+	width:115px;
+	height:50px;
+	border-radius:3px;
+	border:none;
+	color:#5495b2;
+	background:#EAEAEA;
+	font-size:13px;
+}
+.recBtn{
+	margin-right:13px;
+}
+.order{
+	box-sizing:border-box;
+	width:250px;
+	height:50px;
+	border-radius:3px;
+	border:none;
+	
+	
+	color:white;
+	background:#5495b2;
+	font-size:16px;
+}
+/* 글 목록 버튼 */
+.listBtn{
+	position:relative;
+	width:153px;
+	margin:0px auto 80px auto;
+}
+button[data-oper="list"]{
+	box-sizing:border-box;
+	width:153px;
+	height:50px;
+	border-radius:3px;
+	border:1px solid #5495b2;
+	color:white;
+	background:#5495b2;
+	font-size:16px;
+}
