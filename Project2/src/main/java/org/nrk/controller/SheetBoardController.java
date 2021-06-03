@@ -57,12 +57,6 @@ public class SheetBoardController {
 	// 글 작성
 	@PostMapping("/register")
 	public String register(SheetBoardVO sboard, RedirectAttributes rttr) {
-		/*
-		log.info("register: " + sboard);
-		service.register(sboard);
-		rttr.addFlashAttribute("result", sboard.getBno());
-		return "redirect:/sheet/list";
-		 */
 		log.info("register: " + sboard);
 		
 		if(sboard.getAttachList() != null) {
@@ -96,15 +90,6 @@ public class SheetBoardController {
 	// 글 삭제
 	@GetMapping("/remove")
 	public String remove(@RequestParam("bno") int bno, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr) {
-		/*
-		log.info("remove: " + bno);
-			
-		if(service.remove(bno)) {
-			rttr.addFlashAttribute("result", "success");
-		}
-			
-		return "redirect:/sheet/list" + cri.getListLink();
-		*/
 		log.info("remove: " + bno);
 		
 		List<BoardAttachVO> attachList = service.getAttachList(bno);
@@ -123,7 +108,7 @@ public class SheetBoardController {
 	
 	// 첨부파일
 	@GetMapping(value = "/getAttachList", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	@ResponseBody // @RestController로 작성되지 않았기 때문에 @ResponseBody 적용해서 JSON데이터 반환해야함
+	@ResponseBody
 	public ResponseEntity<List<BoardAttachVO>> getAttachList(int bno){
 		log.info("getAttachList " + bno);
 		return new ResponseEntity<>(service.getAttachList(bno), HttpStatus.OK);

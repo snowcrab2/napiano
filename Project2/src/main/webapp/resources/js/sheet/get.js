@@ -15,14 +15,9 @@ $(document).ready(function(){
 			$(arr).each(function(i, attach){
 				var fileCallPath = encodeURIComponent(attach.uploadPath+"/s_"+attach.uuid+"_"+attach.fileName);
 				
-				str += "<li data-path='"+attach.uploadPath+"'";
-				str += "data-uuid='"+attach.uuid+"' data-filename='"+attach.fileName+"' data-type='"+attach.fileType+"'";
-				str += " ><div>";
-				str += "<span>"+attach.fileName+"</span>";
-				//str += "<img src='/display?fileName="+fileCallPath+"'>";
-				str += "</div>";
-				str + "</li>";
-				
+				str += "<li data-path='"+attach.uploadPath+"' data-uuid='"+attach.uuid+"'";
+				str += " data-filename='"+attach.fileName+"' data-type='"+attach.fileType+"'><div>";
+				str += "<span>"+attach.fileName+"</span></div></li>";				
 			})
 			
 			$(".uploadResult ul").html(str);

@@ -58,7 +58,7 @@ $(document).ready(function(e){
 		
 		// 첨부파일 업로드를 ajax를 통해
 		$.ajax({
-			url: "/uploadAjaxAction",
+			url: "/uploadAction",
 			processData: false,
 			contentType: false,
 			data: formData, // formData 전송
